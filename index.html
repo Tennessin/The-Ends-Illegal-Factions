@@ -16,7 +16,7 @@
 :root{
   --bg:#0a0a0a;
   --bg-secondary:#0d1117;
-  --bg-tertiary:#161b22;
+  --bg-tertiary:#1a1622;
   --accent:#988bc4;
   --accent-2:#9375f3;
   --accent-hover:#988bc4;
@@ -24,12 +24,12 @@
   --muted:#8b949e;
   --text:#ffffff;
   --text-secondary:#c9d1d9;
-  --glass-border: rgba(30,144,255,.15);
-  --glass-border-blue: rgba(65,105,225,.15);
+  --glass-border: rgba(128, 30, 255, 0.15);
+  --glass-border-blue: rgba(126, 65, 225, 0.15);
   --maxw:1400px;
   --kill-glow: 0 8px 32px rgba(98, 30, 255, 0.4);
   --shadow: 0 4px 16px rgba(0,0,0,.4);
-  --card-bg: linear-gradient(135deg, rgba(22,27,34,.95) 0%, rgba(13,17,23,.95) 100%);
+  --card-bg: linear-gradient(135deg, rgba(51, 34, 99, 0.95) 0%, rgba(78, 48, 136, 0.95) 100%);
 }
 
 /* base */
@@ -86,7 +86,7 @@ img { will-change: auto; transform: translateZ(0); }
   border-radius:20px; 
   padding:32px; 
   border:2px solid var(--glass-border); 
-  box-shadow:var(--shadow), 0 0 0 1px rgba(30,144,255,.1); 
+  box-shadow:var(--shadow), 0 0 0 1px rgba(135, 30, 255, 0.1); 
   position:relative;
   overflow:hidden;
 }
@@ -178,8 +178,8 @@ img { will-change: auto; transform: translateZ(0); }
 }
 .topnav .cat.active{ 
   color:var(--text); 
-  background: linear-gradient(135deg, rgba(30,144,255,.2), rgba(13,17,23,.2)); 
-  box-shadow: inset 0 0 20px rgba(30,144,255,.2); 
+  background: linear-gradient(135deg, rgba(71, 30, 255, 0.2), rgba(13,17,23,.2)); 
+  box-shadow: inset 0 0 20px rgba(116, 30, 255, 0.2); 
 }
 .topnav .cat.active::after{
   transform:scaleX(1);
@@ -214,7 +214,7 @@ img { will-change: auto; transform: translateZ(0); }
 .subtabs .sub.active{ 
   color:#fff; 
   background: linear-gradient(135deg, var(--accent), var(--accent-2)); 
-  box-shadow: 0 4px 16px rgba(30,144,255,.4); 
+  box-shadow: 0 4px 16px rgba(33, 6, 107, 0.4); 
   border-color:transparent; 
   transform:translateY(-2px); 
 }
@@ -231,7 +231,7 @@ img { will-change: auto; transform: translateZ(0); }
   justify-content:center; 
   border:3px solid var(--accent); 
   background: var(--card-bg); 
-  box-shadow: 0 8px 30px rgba(30,144,255,.3), 0 0 0 1px rgba(30,144,255,.2); 
+  box-shadow: 0 8px 30px rgba(128, 30, 255, 0.3), 0 0 0 1px rgba(116, 30, 255, 0.2); 
   transition:all .3s;
   position:relative;
 }
@@ -947,9 +947,9 @@ select:focus{
           <div class="cat active" data-tab="testdrops"><i class="fa-solid fa-bullseye"></i>&nbsp;Test Drops</div>
           <div class="cat" data-tab="tier1"><i class="fa-solid fa-gun"></i>&nbsp;Tier 1 Weaponry</div>
         <!--   <div class="cat" data-tab="tier1_5"><i class="fa-solid fa-star"></i>&nbsp;Tier 1.5</div>-->
-         <!--  <div class="cat" data-tab="tier2"><i class="fa-solid fa-shield-alt"></i>&nbsp;Tier 2 Weaponry</div>-->
+           <div class="cat" data-tab="tier2"><i class="fa-solid fa-shield-alt"></i>&nbsp;Tier 2/3 Weaponry</div>
           <div class="cat" data-tab="drugs"><i class="fa-solid fa-capsules"></i>&nbsp;Drugs</div>
-          <div class="cat" data-tab="forums"><i class="fa-solid fa-comments"></i>&nbsp;Forums</div>
+        <!--  <div class="cat" data-tab="forums"><i class="fa-solid fa-comments"></i>&nbsp;Forums</div>-->
           <div class="cat" data-tab="roe"><i class="fa-solid fa-book"></i>&nbsp;ROE</div>
         </div>
 
@@ -1159,30 +1159,54 @@ const IMAGES = {
   'm9': BASE_PATH + '/Gunimage/m9.png',
 
 
-    'smithwesson': BASE_PATH + 'https://media.discordapp.net/attachments/1428117571567226892/1460209201942102037/smithwesson.png?ex=6966154b&is=6964c3cb&hm=06cb7d439c495ea6f9940ead07b38d2f15855f65cf437d84276a927615acef58&=&format=webp&quality=lossless&width=1001&height=1001',
-    'webleymkiv': BASE_PATH + 'https://media.discordapp.net/attachments/1428117571567226892/1460207449947504775/weapon_weblymkiv.png?ex=696613a9&is=6964c229&hm=35034c2aa88956f068be5171375550e75d888b6aaa83b626eb27497f3d52342c&=&format=webp&quality=lossless&width=887&height=887',
-    'baikal': BASE_PATH + 'https://media.discordapp.net/attachments/1428117571567226892/1460207449083482134/weapon_walterppk.png?ex=696613a9&is=6964c229&hm=b14eb526fa94f55d872e25ae3ab31c5c14dc2fe1013a0b0578a0c1800f1c800d&=&format=webp&quality=lossless&width=887&height=887',
+    'smithwesson': 'https://media.discordapp.net/attachments/1428117571567226892/1460209201942102037/smithwesson.png?ex=6966154b&is=6964c3cb&hm=06cb7d439c495ea6f9940ead07b38d2f15855f65cf437d84276a927615acef58&=&format=webp&quality=lossless&width=1001&height=1001',
+    'webleymkiv': 'https://media.discordapp.net/attachments/1428117571567226892/1460207449947504775/weapon_weblymkiv.png?ex=696613a9&is=6964c229&hm=35034c2aa88956f068be5171375550e75d888b6aaa83b626eb27497f3d52342c&=&format=webp&quality=lossless&width=887&height=887',
+    'baikal': 'https://media.discordapp.net/attachments/1428117571567226892/1460216736317046960/weapon_baikal.png?ex=69661c4f&is=6964cacf&hm=d8958ac2abe198511fe3d57553f8d3a0fb29cebab145335832aa133d2cf1c7e0&=&format=webp&quality=lossless&width=1001&height=1001',
+    'waltherppk': 'https://media.discordapp.net/attachments/1428117571567226892/1460216489956217005/weapon_walterppk.png?ex=69661c14&is=6964ca94&hm=4b0bb590d4170082cf84765cdf599945c2e3911ee4e8220541cc4396e09feec6&=&format=webp&quality=lossless&width=1001&height=1001',
+    'zoraki': 'https://media.discordapp.net/attachments/1428117571567226892/1460216907281207561/weapon_zoraki925.png?ex=69661c78&is=6964caf8&hm=4b2306e0a5f19c73389cdd2657b45698932ba43c80531fb7e0455cebcf9f307b&=&format=webp&quality=lossless&width=1001&height=1001',
+    'baikal': 'https://media.discordapp.net/attachments/1428117571567226892/1460207449083482134/weapon_walterppk.png?ex=696613a9&is=6964c229&hm=b14eb526fa94f55d872e25ae3ab31c5c14dc2fe1013a0b0578a0c1800f1c800d&=&format=webp&quality=lossless&width=887&height=887',
 
   
   // Drug images
-   'Stardawg 3.5s': BASE_PATH + 'https://media.discordapp.net/attachments/1428117571567226892/1460209881822003324/stardawg_35.png?ex=696615ed&is=6964c46d&hm=bf5b9c32de94f7f95a1edbfd263dfa7d3459343d6432b0bd93f783e892d0f944&=&format=webp&quality=lossless&width=110&height=110',
- 'Lemon Skittles 3.5s': BASE_PATH + 'https://media.discordapp.net/attachments/1428117571567226892/1460209882639765668/lemonskittles_35.png?ex=696615ed&is=6964c46d&hm=b302b8017ac3218d58e0fddb3943032eb8e7fb552aba0a3ac06b028031b3015c&=&format=webp&quality=lossless&width=110&height=110',
-  'Runtz 3.5s': BASE_PATH + 'https://media.discordapp.net/attachments/1428117571567226892/1460209883113590918/runtz_35.png?ex=696615ed&is=6964c46d&hm=e480b127c57ceeaaae3af8eb0109c9060586d9b7a4ca25e628083d354c078534&=&format=webp&quality=lossless&width=110&height=110',
+   'Stardawg': 'https://media.discordapp.net/attachments/1428117571567226892/1460209881822003324/stardawg_35.png?ex=696615ed&is=6964c46d&hm=bf5b9c32de94f7f95a1edbfd263dfa7d3459343d6432b0bd93f783e892d0f944&=&format=webp&quality=lossless&width=110&height=110',
+  'LemonSkittles': 'https://media.discordapp.net/attachments/1428117571567226892/1460209882639765668/lemonskittles_35.png?ex=696615ed&is=6964c46d&hm=b302b8017ac3218d58e0fddb3943032eb8e7fb552aba0a3ac06b028031b3015c&=&format=webp&quality=lossless&width=110&height=110',
+  'Runtz': 'https://media.discordapp.net/attachments/1428117571567226892/1460209883113590918/runtz_35.png?ex=696615ed&is=6964c46d&hm=e480b127c57ceeaaae3af8eb0109c9060586d9b7a4ca25e628083d354c078534&=&format=webp&quality=lossless&width=110&height=110',
+
+        'Cocaine': 'https://media.discordapp.net/attachments/1428117571567226892/1460213478848594084/cocaine.png?ex=69661946&is=6964c7c6&hm=840660e00caaa5915f1d1ca7d072dacf89f792f83e250010b98818694d230b54&=&format=webp&quality=lossless&width=110&height=110',
+
+    'Heroin': 'https://media.discordapp.net/attachments/1428117571567226892/1460213287747715209/heroin.png?ex=69661919&is=6964c799&hm=2e7c6dad5643a0a278d686a8710aca9bca63d2d577b7c1770708d57fa5ad06d9&=&format=webp&quality=lossless&width=153&height=110',
+    'Crack Pack': 'https://media.discordapp.net/attachments/1428117571567226892/1460212968741539840/crack_pack.png?ex=696618cd&is=6964c74d&hm=e4b97c8ece88457e8835beab2e5273dd79c11d76a28d05cde15b003df3c936e0&=&format=webp&quality=lossless&width=682&height=396',
+    'Careplus': 'https://media.discordapp.net/attachments/1428117571567226892/1460213816515362904/careplus.png?ex=69661997&is=6964c817&hm=9544128d3e3a95d2ce22f2df99aa59997395bc61ff70ff92b2de9738813ca965&=&format=webp&quality=lossless&width=110&height=110',
+    'Phenegarn':'https://media.discordapp.net/attachments/1428117571567226892/1460213928138117251/phenegarn.png?ex=696619b1&is=6964c831&hm=04ab0873cfe577c23b83100d3e994bc4c2f2ab1f3dd0f6b25d45d2d063debf05&=&format=webp&quality=lossless&width=110&height=110',
+    'Bells': 'https://media.discordapp.net/attachments/1428117571567226892/1460214011785248809/bells.png?ex=696619c5&is=6964c845&hm=a9f77b508314fad6d4fca90114abc44cb792c048928f6287f7c2d5218035870b&=&format=webp&quality=lossless&width=110&height=110',
+    'Toseina': 'https://media.discordapp.net/attachments/1428117571567226892/1460214109998944410/toseina.png?ex=696619dd&is=6964c85d&hm=e0f163119d1e99ae3cc9246f36468b633e8f8d5c621f7d347d6fb1a1de3511f1&=&format=webp&quality=lossless&width=110&height=110',
+    'Fastgas': 'https://media.discordapp.net/attachments/1428117571567226892/1460214197911683259/fastgas_crate.png?ex=696619f2&is=6964c872&hm=cda0dd5c1b03765136e8b504672a5cb464eb15d5837a58e1ab2ba9a7c3ac4c66&=&format=webp&quality=lossless&width=110&height=110',
 
 
-    'Heroin': BASE_PATH + '/Gunimage/he.png',
-    'Crack': BASE_PATH + '/Gunimage/crack.png',
-    'Careplus': BASE_PATH + '/Gunimage/careplus.png',
-    'Phenegarn': BASE_PATH + '/Gunimage/phenegarn.png',
-    'Bells': BASE_PATH + '/Gunimage/bells.png',
-    'Toseina': BASE_PATH + '/Gunimage/toseina.png',
-    'Fastgas': BASE_PATH + '/Gunimage/fastgas.png',
 
+    'Xanax': 'https://media.discordapp.net/attachments/1428117571567226892/1460214568037912589/xanax.png?ex=69661a4a&is=6964c8ca&hm=964d1409d4407ad37c5803536a0d5fbce5e36287a2137be6ac922869f19ab70c&=&format=webp&quality=lossless&width=635&height=476',
+    'Perc 15s': 'https://media.discordapp.net/attachments/1428117571567226892/1460215399009353750/perc10.png?ex=69661b10&is=6964c990&hm=06486b996eb3fc2730dfa892cf47f7beac636c393b701bf5effa1ba6b08df4eb&=&format=webp&quality=lossless&width=110&height=110',
+    'Perc 30s': 'https://media.discordapp.net/attachments/1428117571567226892/1460215258571477136/perc30.png?ex=69661aef&is=6964c96f&hm=019eee72d5e8908d212d393c828c86e86378e57dfaa1deb072c2c7d7fa4f3561&=&format=webp&quality=lossless&width=110&height=110',
+  'zombiekiller': 'https://media.discordapp.net/attachments/1428117571567226892/1460207456109072579/weapon_zombiekiller.png?ex=696613aa&is=6964c22a&hm=a0f93bffe4238007638c829749850c7a6570099121c50f7e209bfa62978c6281&=&format=webp&quality=lossless&width=110&height=110',
+  'zombiekillerbutterfly': 'https://media.discordapp.net/attachments/1428117571567226892/1460207455803019419/weapon_zombiebutterflyknife.png?ex=696613aa&is=6964c22a&hm=c235b1891a997f1d0bc106923b52653e961028f04b3d325258ed04e40c59b371&=&format=webp&quality=lossless&width=110&height=110',
+  'stainlessteel': 'https://media.discordapp.net/attachments/1428117571567226892/1460207448227975364/weapon_stainlesssteel.png?ex=696613a9&is=6964c229&hm=2a3c2979224819151f29fdf32daf9901c628ca47b2bfcc7d7342a361daa59d53&=&format=webp&quality=lossless&width=110&height=110',
+  'zombiekilleraxe': 'https://media.discordapp.net/attachments/1428117571567226892/1460207450996215969/weapon_zkaxe.png?ex=696613a9&is=6964c229&hm=10bbe187a06224c8e70dedea72d73ea1692ab5d85156da010974a74fc76bdf12&=&format=webp&quality=lossless&width=110&height=110',
+  'cleaver': 'https://media.discordapp.net/attachments/1428117571567226892/1460207427600253114/weapon_cleaver.png?ex=696613a4&is=6964c224&hm=9ba576e00b7e6d3ad9fed5db0a5b280463d7c57e3e86152374bd6332182f4252&=&format=webp&quality=lossless&width=110&height=110',
+  'kitchenknife': 'https://media.discordapp.net/attachments/1428117571567226892/1460207428254568531/weapon_kitchenknife.png?ex=696613a4&is=6964c224&hm=eb8676950f1e511957a81c978484b25ff552335fa075231a32042d35029290a4&=&format=webp&quality=lossless&width=110&height=110',
+  '23inch': 'https://media.discordapp.net/attachments/1428117571567226892/1460207429777363165/weapon_23inch.png?ex=696613a4&is=6964c224&hm=8c2c79e22fec25dd14216837a44ba594c0954987650b18e4e218c00537289909&=&format=webp&quality=lossless&width=110&height=110',
+  'sawnoffshotgun': 'https://media.discordapp.net/attachments/1428117571567226892/1460218679286562958/WEAPON_SAWNOFFSHOTGUN.png?ex=69661e1e&is=6964cc9e&hm=a06024ac387690851c6eab857269443badf4d07184389832c6e9be74713d5dda&=&format=webp&quality=lossless&width=385&height=385',
+  'sawnoffdoublebarrel': 'https://media.discordapp.net/attachments/1428117571567226892/1460207427948646416/WEAPON_DBSHOTGUN.png?ex=696613a4&is=6964c224&hm=970f9c8d5285b67a5ca71292ef9627694d31fa1a96c72a271cd7d8c39734a72a&=&format=webp&quality=lossless&width=887&height=887',
+  'mac10': 'https://media.discordapp.net/attachments/1428117571567226892/1460207428577525760/weapon_mac10.png?ex=696613a4&is=6964c224&hm=441b9fdc9d1eb55e3da9819002287f36f65c2f79bb0db90fa2e7ae649e973010&=&format=webp&quality=lossless&width=887&height=887',
+  'mac11': 'https://media.discordapp.net/attachments/1428117571567226892/1460207428917530837/weapon_mac11.png?ex=696613a4&is=6964c224&hm=cb0559871a88e10a87a75803d93570c84d7d139cf028b5066ba0d993b7cad6ef&=&format=webp&quality=lossless&width=887&height=887',
+  'microuzi': 'https://media.discordapp.net/attachments/1428117571567226892/1460207448693407777/weapon_uzi.png?ex=696613a9&is=6964c229&hm=75d533590e2999f8a866d2c36326e33155d9464cdca61da16c99effefef266a5&=&format=webp&quality=lossless&width=887&height=887',
+  'skorpion': 'https://media.discordapp.net/attachments/1428117571567226892/1460207447900684320/weapon_skorpion.png?ex=696613a8&is=6964c228&hm=31738adedf2565b7341b08efc1274f5dbc22c14cad7721ec7c80e32d3234093c&=&format=webp&quality=lossless&width=887&height=887',
+
+
+    'glock26': 'https://media.discordapp.net/attachments/1428117571567226892/1460224936894529731/WEAPON_G26.png?ex=696623f2&is=6964d272&hm=79c0c9f8fbabdaa867cfbc5f21ab7c620b00bc2052c184a599212e643c431d17&=&format=webp&quality=lossless&width=1001&height=1001',
+  'p88p': 'https://media.discordapp.net/attachments/1428117571567226892/1460224719906275419/WEAPON_P88P.png?ex=696623be&is=6964d23e&hm=02f4b49cfbad1a2ce0d9db992214b528326944043055efb9683d97efbd7020e2&=&format=webp&quality=lossless&width=887&height=887',
+  'oliveglock17': 'https://media.discordapp.net/attachments/1428117571567226892/1460224719499300944/WEAPON_OLIVE17.png?ex=696623be&is=6964d23e&hm=d64bef53b97666db0d8827b095bc789b6b99e2e6fd2dee188ff30b118c533361&=&format=webp&quality=lossless&width=887&height=887'
 
 //  'Shrooms': BASE_PATH + '/Gunimage/Shrooms.png',
-  'Xanax': BASE_PATH + '/images/Xanax.png',
-  'Perc 20s': BASE_PATH + '/Gunimage/perc20.png',
-  'Perc 30s': BASE_PATH + '/Gunimage/perc30.png'
  // 'Green': BASE_PATH + '/Gunimage/Green Syrup.png',
  // 'Tris': BASE_PATH + '/images/Tris.png',
  // 'Quagen': BASE_PATH + '/images/Quagen.png',
@@ -1256,14 +1280,14 @@ const DRUG_PRICES = {
   'Lemon Skittles 3.5s': { price: '£30–£100' },
   'Runtz 3.5s': { price: '£30–£70' },
   'Heroin': { price: '£200–£750' },
-  'Crack': { price: '£200–£750' },
+  'Crack Pack': { price: '£200–£750' },
   'Careplus': { price: '£50–£100' },
   'Phenegarn': { price: '£20–£50' },
   'Bells': { price: '£30–£100' },
   'Toseina': { price: '£40–£50' },
   'Fastgas': { price: '£20–£40' },
   'Xanax': { price: '£70–£100' },
-  'Perc 20s': { price: '£70–$1,000' },
+  'Perc 15s': { price: '£70–$1,000' },
   'Perc 30s': { price: '£100–£250' }
 };
 
@@ -1271,50 +1295,51 @@ const DRUG_PRICES = {
 const ITEMS = {
   testdrops: [
 
-  // Pistols
-    // Common (Light Blue/White background) - 6
-    { name:'Webley MKIV', rarity:'common', category:'Pistols', img:IMAGES['webleymkiv'] || FALLBACK },
-    { name:'Baikal', rarity:'rare', category:'Pistols', img:IMAGES['webleymkiv'] || FALLBACK },
-    { name:'Glock 17', rarity:'rare', category:'Pistols', img:IMAGES['webleymkiv'] || FALLBACK },
-    { name:'Walther PPK', rarity:'rare', category:'Pistols', img:IMAGES['webleymkiv'] || FALLBACK },
-    { name:'Zoraki 925', rarity:'rare', category:'Pistols', img:IMAGES['webleymkiv'] || FALLBACK },
-    // Uncommon (Green background) - 6
-    { name:'Smith & Wesson 15', rarity:'common', category:'Pistols', img:IMAGES['smithwesson'] || FALLBACK },
 
-
-  // Melees 
+    // Melees 
     
     // Rare (Yellow background) - 1
-    { name:'Zombie Killer Machete', rarity:'uncommon', category:'Knives', img:IMAGES['zombiekiller'] || FALLBACK },
-    { name:'Zombie Killer Flicky', rarity:'uncommon', category:'Knives', img:IMAGES['zombiekiller'] || FALLBACK },
-    { name:'Stainless Steel Machete', rarity:'uncommon', category:'Knives', img:IMAGES['zombiekiller'] || FALLBACK },
-    { name:'Cleaver', rarity:'uncommon', category:'Knives', img:IMAGES['zombiekiller'] || FALLBACK },
-    { name:'Kitchen Knife', rarity:'uncommon', category:'Knives', img:IMAGES['zombiekiller'] || FALLBACK },
-    { name:'Zombie Axe', rarity:'uncommon', category:'Knives', img:IMAGES['zombiekiller'] || FALLBACK },
+    { name:'Zombie Killer Machete', rarity:'epic', category:'Knives', img:IMAGES['zombiekiller'] || FALLBACK },
+    { name:'Zombie Killer Flicky', rarity:'uncommon', category:'Knives', img:IMAGES['zombiekillerbutterfly'] || FALLBACK },
+    { name:'Stainless Steel', rarity:'rare', category:'Knives', img:IMAGES['stainlessteel'] || FALLBACK },
+    { name:'Cleaver', rarity:'uncommon', category:'Knives', img:IMAGES['cleaver'] || FALLBACK },
+    { name:'Kitchen Knife', rarity:'uncommon', category:'Knives', img:IMAGES['kitchenknife'] || FALLBACK },
+    { name:'Zombie Axe', rarity:'legendary', category:'Knives', img:IMAGES['zombiekilleraxe'] || FALLBACK },
+
+  // Pistols
+    // Common (Light Blue/White background) - 6
+        { name:'Smith & Wesson 15', rarity:'common', category:'Pistols', img:IMAGES['smithwesson'] || FALLBACK },
+    { name:'Webley MKIV', rarity:'common', category:'Pistols', img:IMAGES['webleymkiv'] || FALLBACK },
+    { name:'Baikal', rarity:'uncommon', category:'Pistols', img:IMAGES['baikal'] || FALLBACK },
+  //  { name:'Glock 17', rarity:'rare', category:'Pistols', img:IMAGES['glock17'] || FALLBACK },
+    { name:'Walther PPK', rarity:'rare', category:'Pistols', img:IMAGES['waltherppk'] || FALLBACK },
+    { name:'Zoraki 925', rarity:'rare', category:'Pistols', img:IMAGES['zoraki'] || FALLBACK },
+    // Uncommon (Green background) - 6
+
 
 
 
   // Shotguns
-    { name:'Sawn Off Shotgun', rarity:'epic', category:'Shotguns', img:IMAGES['zombiekiller'] || FALLBACK },
-    { name:'Sawn Off Double Barrel', rarity:'epic', category:'Shotguns', img:IMAGES['zombiekiller'] || FALLBACK },
+    { name:'Sawn Off Shotgun', rarity:'epic', category:'Shotguns', img:IMAGES['sawnoffshotgun'] || FALLBACK },
+    { name:'Sawn Off Double Barrel', rarity:'epic', category:'Shotguns', img:IMAGES['sawnoffdoublebarrel'] || FALLBACK },
 
 
 
   // SMGs
-    { name:'Mac-10', rarity:'legendary', category:'SMGs', img:IMAGES['zombiekiller'] || FALLBACK },
-    { name:'Mac-11', rarity:'legendary', category:'SMGs', img:IMAGES['zombiekiller'] || FALLBACK },
-    { name:'Micro UZI', rarity:'legendary', category:'SMGs', img:IMAGES['zombiekiller'] || FALLBACK },
-    { name:'Skorpion MP', rarity:'legendary', category:'SMGs', img:IMAGES['zombiekiller'] || FALLBACK },
+    { name:'Mac-10', rarity:'legendary', category:'SMGs', img:IMAGES['mac10'] || FALLBACK },
+    { name:'Mac-11', rarity:'legendary', category:'SMGs', img:IMAGES['mac11'] || FALLBACK },
+    { name:'Micro UZI', rarity:'legendary', category:'SMGs', img:IMAGES['microuzi'] || FALLBACK },
+    { name:'Skorpion MP', rarity:'legendary', category:'SMGs', img:IMAGES['skorpion'] || FALLBACK },
 
   ],
   
   tier1: [
     // Common (Light Blue/White background) - 6
-    { name:'Walther PPK', rarity:'common', category:'Pistols', img:IMAGES['m9'] || FALLBACK },
+    { name:'Walther PPK', rarity:'ucommon', category:'Pistols', img:IMAGES['p88p'] || FALLBACK },
     // Uncommon (Green background) - 8
-    { name:'Glock  26', rarity:'common', category:'Pistols', img:IMAGES['g23'] || FALLBACK },
+    { name:'Glock 26', rarity:'ucommon', category:'Pistols', img:IMAGES['glock26'] || FALLBACK },
     // Rare (Yellow background) - 8
-    { name:'Olive Glock 17', rarity:'rare', category:'Pistols', img:IMAGES['g30'] || FALLBACK }
+    { name:'Olive Glock 17', rarity:'common', category:'Pistols', img:IMAGES['oliveglock17'] || FALLBACK }
     ],
   
   tier1_5: [
@@ -1326,15 +1351,20 @@ const ITEMS = {
   
   tier2: [
     // Uncommon (Green background) - 2 random
-    { name:'g20', rarity:'uncommon', category:'Pistols', img:IMAGES['g20'] || FALLBACK },
-
-    { name:'g40', rarity:'epic', category:'Pistols', img:IMAGES['g40'] || FALLBACK },
-    
     // Legendary (Red background) - All 4
-    { name:'tec9', rarity:'legendary', category:'SMG', img:IMAGES['tec9'] || FALLBACK },
-    { name:'mac10', rarity:'legendary', category:'SMG', img:IMAGES['mac10'] || FALLBACK },
-    { name:'bape_glock', rarity:'legendary', category:'Pistols', img:IMAGES['bape_glock'] || FALLBACK },
-    { name:'deagle', rarity:'legendary', category:'Pistols', img:IMAGES['deagle'] || FALLBACK }
+    //{ name:'tec9', rarity:'legendary', category:'SMG', img:IMAGES['tec9'] || FALLBACK },
+    { name:'Sawn Off Shotgun', rarity:'epic', category:'Shotguns', img:IMAGES['sawnoffshotgun'] || FALLBACK },
+    { name:'Sawn Off Double Barrel', rarity:'epic', category:'Shotguns', img:IMAGES['sawnoffdoublebarrel'] || FALLBACK },
+
+
+
+  // SMGs
+    { name:'Mac-10', rarity:'legendary', category:'SMGs', img:IMAGES['mac10'] || FALLBACK },
+    { name:'Mac-11', rarity:'legendary', category:'SMGs', img:IMAGES['mac11'] || FALLBACK },
+    { name:'Micro UZI', rarity:'legendary', category:'SMGs', img:IMAGES['microuzi'] || FALLBACK },
+    { name:'Skorpion MP', rarity:'legendary', category:'SMGs', img:IMAGES['skorpion'] || FALLBACK },
+    //{ name:'bape_glock', rarity:'legendary', category:'Pistols', img:IMAGES['bape_glock'] || FALLBACK },
+  //  { name:'deagle', rarity:'legendary', category:'Pistols', img:IMAGES['deagle'] || FALLBACK }
   ],
   
   drugs: [
@@ -1342,16 +1372,16 @@ const ITEMS = {
     { name:'Lemon Skittles 3.5s', rarity:'common', category:'Sellable', img:IMAGES['LemonSkittles'] || FALLBACK },
     { name:'Runtz 3.5s', rarity:'uncommon', category:'Sellable', img:IMAGES['Runtz'] || FALLBACK },
     { name:'Heroin', rarity:'Epic', category:'Useable', img:IMAGES['Heroin'] || FALLBACK },
-    { name:'Crack', rarity:'Epic', category:'Useable', img:IMAGES['Crack'] || FALLBACK },
-    { name:'Cocaine', rarity:'legandary', category:'Useable', img:IMAGES['Cocaine'] || FALLBACK },
+    { name:'Crack Pack', rarity:'legandary', category:'Useable', img:IMAGES['Crack Pack'] || FALLBACK },
+    { name:'Cocaine Pack', rarity:'legandary', category:'Useable', img:IMAGES['Cocaine'] || FALLBACK },
     { name:'Careplus', rarity:'rare', category:'Sellable', img:IMAGES['Careplus'] || FALLBACK },
     { name:'Phenegarn', rarity:'common', category:'Sellable', img:IMAGES['Phenegarn'] || FALLBACK },
     { name:'Bells', rarity:'epic', category:'Sellable', img:IMAGES['Bells'] || FALLBACK },
     { name:'Toseina', rarity:'epic', category:'Sellable', img:IMAGES['Toseina'] || FALLBACK },
     { name:'Xanax', rarity:'rare', category:'Useable', img:IMAGES['Xanax'] || FALLBACK },
-    { name:'Perc 20s', rarity:'rare', category:'Useable', img:IMAGES['Perc 20s'] || FALLBACK },
+    { name:'Perc 15s', rarity:'rare', category:'Useable', img:IMAGES['Perc 15s'] || FALLBACK },
     { name:'Perc 30s', rarity:'rare', category:'Useable', img:IMAGES['Perc 30s'] || FALLBACK },
-    { name:'Fastgas', rarity:'rare', category:'Useable', img:IMAGES['Fast Gas'] || FALLBACK }
+    { name:'Fastgas', rarity:'rare', category:'Useable', img:IMAGES['Fastgas'] || FALLBACK }
 
   ]
 };
@@ -2481,8 +2511,8 @@ async function renderGrid(forceRefresh = false){
     return;
   }
 
-  // Special handling for Tier 1 with New Year Spin
-  if(activeTab === 'tier1'){
+  // Special handling for Tier 1 with New Year Spin 
+  if(activeTab === 'tier21'){
     contentArea.innerHTML = `
       <div style="max-width:1100px; margin:0 auto; padding:24px;">
         <!-- New Year Spin Section -->
